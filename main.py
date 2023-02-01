@@ -5,16 +5,16 @@ import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
     start_csv = 1
-    end_csv = 9
+    end_csv = 63
     for i in range(start_csv,end_csv + 1,1):
-        df = pd.read_csv("./data/"+ str(i)+".csv")
+        df = pd.read_csv("./rdp_data/rdp_"+ str(i)+".csv")
         data = np.array(df[['C_x','C_z']])
         
         # dataT = data.T
         # fig, (ax1,ax2) = plt.subplots(1,2)
         # ax1.plot(dataT[0],dataT[1])
 
-        rdp_mask = rdp(data,algo="iter", return_mask=True)
+        rdp_mask = rdp(data,algo="iter", return_mask=True,epsilon=0.5)
         rdp_data = data[rdp_mask]
         
         # rdp_dataT = rdp_data.T
@@ -25,5 +25,5 @@ if __name__ == "__main__":
             if rdp_mask[j] == False:
                 drop_index.append(j)
         rdp_df = df.drop(drop_index)
-        rdp_df.to_csv("./rdp_data/rdp_"+str(i)+".csv",index = None)
+        rdp_df.to_csv("./rdp2_data/rdp_"+str(i)+".csv",index = None)
         print("finish: "+str(i))

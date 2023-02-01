@@ -7,7 +7,7 @@ if __name__ == "__main__":
     end_csv = 9
     for i in range(start_csv,end_csv + 1,1):
         plt.figure(i)
-        df = pd.read_csv("./data/"+ str(i)+".csv")
+        df = pd.read_csv("./rdp2_data/rdp_"+str(i)+".csv")
         data = np.array(df[['C_x','C_z']])
         
         dataT = data.T

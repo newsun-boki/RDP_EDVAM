@@ -25,13 +25,13 @@ if __name__ == "__main__":
     end_csv = 63
     trajectories = []
     for i in range(start_csv,end_csv + 1,1):
-        df = pd.read_csv("./rdp_data/rdp_"+ str(i)+".csv")
+        df = pd.read_csv("./rdp2_data/rdp_"+ str(i)+".csv")
         data = np.array(df[['C_x','C_z']])
         trajectories.append(data)
-        
+
     dis_mat = compute_distance_matrix(trajectories)
     arr = np.array(dis_mat)
-    np.savetxt("dismat.txt",dis_mat,fmt='%f',delimiter=',')
+    np.savetxt("dismat_frechet.txt",dis_mat,fmt='%f',delimiter=',')
     print("distance matrix Frechet get")
 
     dis_mat_area = compute_distance_matrix(trajectories,'area')
