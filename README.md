@@ -1,6 +1,6 @@
 # Trajectories Clustering
 Use the Ramer-Douglas-Peucker (RDP) algorithm to reduce the number of points in a trajectory from EDVAM,
-and do clustering. The performance is not good though and still need to find better hyper parameters.
+and use traclus to do clustering task. The performance is bad and still need to **find better hyper parameters**.
 
 ## Requirments
 
@@ -25,6 +25,12 @@ draw trajectories.
 
 ```python
 python main_draw.py
+```
+
+clustering and generate stand trajectory
+
+```
+python partition_cluster.py
 ```
 
 ## Main File
