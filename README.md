@@ -29,8 +29,14 @@ python main_draw.py
 
 clustering and generate stand trajectory
 
-```
+```python
 python partition_cluster.py
+```
+
+smooth the trajectory.
+
+```python
+bessel_interpolation.py
 ```
 
 ## Main File
